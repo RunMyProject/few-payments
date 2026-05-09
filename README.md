@@ -1,2 +1,9 @@
 # few-payments
-A Java 21 payment simulator for $FEW, focusing on advanced transactionality, Virtual Threads, and Blockchain integration via Geth.
+
+A Java 25 payment simulator for **$FEW**, focusing on advanced transactionality, Virtual Threads, and Blockchain integration via Geth.
+
+## 📚 Project Documentation
+
+* [Session 1 & 2: Workstation & Runtime Setup](./docs/SETUP_LOG.md)
+* [Session 3: Spring Boot & Docker Infrastructure](./docs/SETUP_SPRING_LOG.md)
+

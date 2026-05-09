@@ -15,7 +15,7 @@
 | **12:35** | **Runtime** | **Service Startup** | `./mvnw spring-boot:run` - Microservice active on port 8080. |
 | **12:37** | **Verification** | **Web Hello World** | Confirmed "$FEW Payment System" visibility at `localhost:8080/hello`. |
 | **12:40** | **Docs** | **Update Setup Log** | Finalized Session 3 documentation and verified web visibility. |
-| **12:45** | **End Session**| _ |  _ |
+| **13:00** | **End Session**| _ |  _ |
 
 ---
 
