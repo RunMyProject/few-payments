@@ -1,0 +1,22 @@
+# docker-compose.yml
+# Author: Edoardo Sabatini
+# Date: 2026-05-09
+# Company: few-payments
+# Description: Multi-container infrastructure for $FEW payments simulation.
+# Includes: PostgreSQL (Transactions) & Geth (Blockchain node).
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: few-payments-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
