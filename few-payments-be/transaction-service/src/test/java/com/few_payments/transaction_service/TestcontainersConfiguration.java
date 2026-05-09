@@ -1,5 +1,10 @@
 package com.few_payments.transaction_service;
 
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.springframework.context.annotation.Bean;
+import org.testcontainers.postgresql.PostgreSQLContainer;
+
 /**
  * TestcontainersConfiguration
  * Author: Edoardo Sabatini
@@ -10,17 +15,14 @@ package com.few_payments.transaction_service;
  *              and password into Spring's datasource — no @DynamicPropertySource needed.
  *              The container starts once and is reused across the entire test suite.
  */
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.springframework.context.annotation.Bean;
-import org.testcontainers.containers.PostgreSQLContainer;
-
 @TestConfiguration(proxyBeanMethods = false)
 public class TestcontainersConfiguration {
     
     @Bean
     @ServiceConnection
-    PostgreSQLContainer<?> postgresContainer() {
-        return new PostgreSQLContainer<>("postgres:16-alpine");
+    // Rimosso il <?> qui
+    PostgreSQLContainer postgresContainer() {
+        // Rimosso il <> qui
+        return new PostgreSQLContainer("postgres:16-alpine");
     }
 }
