@@ -30,6 +30,14 @@
 		<java.version>25</java.version>
 	</properties>
 	<dependencies>
+
+		<!-- Web3j dependency for Ethereum interaction -->
+		<dependency>
+			<groupId>org.web3j</groupId>
+			<artifactId>core</artifactId>
+			<version>4.12.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
