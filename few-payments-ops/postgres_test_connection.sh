@@ -26,7 +26,6 @@ fi
 echo "Load environment variables from: $ENV_FILE"
 set -a
 
-# sostituisci la riga source con questa
 grep -v '^#' "$ENV_FILE" | grep -v '^UID=' | grep -v '^GID=' > /tmp/few_env && set -a && source /tmp/few_env && set +a && rm /tmp/few_env
 
 set +a
