@@ -13,7 +13,7 @@
 | **18:50** | **Troubleshoot** | **Merge Resolution** | Encountered "PoS/Merge" errors in Geth 1.17. Identified that legacy mining is deprecated in newer versions. |
 | **18:55** | **Pivot** | **Developer Mode** | Switched to `--dev` mode in `start_fewcoin_node.sh`. This provides instant block sealing and an auto-unlocked test account. |
 | **19:00** | **Verification** | **RPC Connectivity** | Created `test_blockchain.sh`. Confirmed server is listening on port **8545** and responding to JSON-RPC calls. |
-| **19:10** | **Docs** | **Finalizing Logs** | Updated Session 6 documentation. |
+| **19:20** | **Docs** | **Finalizing Logs** | Updated Session 6 documentation. |
 
 ---
 
@@ -42,6 +42,18 @@ few-payments-blockchain/
 └── data_dev/                     # The actual blockchain database (blocks)
 
 ```
+
+> [!IMPORTANT]
+> **Getting started: Install Geth before launching scripts**
+> To run the blockchain node on Linux Mint, you must first install the Ethereum suite via the official PPA:
+> 1. **Add Repository:** `sudo add-apt-repository -y ppa:ethereum/ethereum`
+> 2. **Update:** `sudo apt-get update`
+> 3. **Install:** `sudo apt-get install ethereum`
+> 4. **Verify:** Run `geth version` to confirm version **1.17.2-stable** or higher is active.
+> 
+> 
+
+---
 
 > [!IMPORTANT]
 > **What we have built:**
