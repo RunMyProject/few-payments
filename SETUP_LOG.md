@@ -3,7 +3,7 @@
 ## 💻 Workstation Specifications
 
 * **User:** Edoardo Sabatini
-* **Hardware:** HP OMEN Laptop 15-ek0xxx
+* **Hardware:** HP OMEN Laptop
 * **Operating System:** Linux Mint 22.3 "Zena" (Xfce Edition)
 * **Kernel:** Linux 6.8.0-110-generic
 * **Project:** $FEW (few-payments)
@@ -41,13 +41,11 @@
 | **10:00** | **IDE Extension** | **Java Extension Pack** | Installed "vscjava.vscode-java-pack" for full JDK 25 support. |
 | **10:15** | **IDE Extension** | **Spring Boot Ext.** | Installed "vscjava.vscode-spring-boot-dashboard" for microservices. |
 | **10:15** | **AI Tooling** | **GitHub Copilot** | Activated AI pair-programming integration within VS Code. |
-| **10:30** | **Git Config** | **Auth & Credentials** | `git config --global user.name "Edoardo Sabatini"` <br>
-
-<br> `git remote set-url origin https://RunMyProject:ghp_***...` |
+| **10:30** | **Git Config** | **Auth & Credentials** | `git config --global user.name "Edoardo Sabatini"` - `git remote set-url origin https://RunMyProject:TOKEN` |
 | **10:45** | **Build Tool** | **Apache Maven** | `sudo apt update && sudo apt install maven -y` |
 | **10:45** | **Break** | **Coffee Break ☕** | A pause to reflect. |
 | **11:00** | **Docs** | **Final Setup Log** | Compiled and finalized this documentation. |
-| **11:15** | **End Session of Setup Log**| git push | _ |
+| **11:20** | **End Session of Setup Log**| _ | _ |
 
 ---
 
