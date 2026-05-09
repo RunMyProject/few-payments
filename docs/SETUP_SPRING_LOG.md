@@ -26,9 +26,3 @@ As of May 9, 2026, 12:37 PM, the environment status is:
 * **Microservice:** `transaction-service` is UP and running.
 * **Database:** PostgreSQL container is active and connected via Spring Boot Docker Compose.
 * **Health Check:** Web endpoint responding correctly to Edoardo.
-
----
-
-Ottimo lavoro, Edoardo. Ora che il log è aggiornato, siamo pronti a sporcarci le mani con il database reale.
-
-**Prossima mossa: Creiamo la classe `Transaction.java` per iniziare a mappare i tuoi $FEW Coin?**
