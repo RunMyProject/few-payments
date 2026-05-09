@@ -26,3 +26,8 @@ As of May 9, 2026, 12:37 PM, the environment status is:
 * **Microservice:** `transaction-service` is UP and running.
 * **Database:** PostgreSQL container is active and connected via Spring Boot Docker Compose.
 * **Health Check:** Web endpoint responding correctly to Edoardo.
+<<<<<<< HEAD
+=======
+
+---
+>>>>>>> 872fa18 (added db connection and first transactional)

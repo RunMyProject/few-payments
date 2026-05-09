@@ -6,4 +6,4 @@ A Java 25 payment simulator for **$FEW**, focusing on advanced transactionality,
 
 * [Session 1 & 2: Workstation & Runtime Setup](./docs/SETUP_LOG.md)
 * [Session 3: Spring Boot & Docker Infrastructure](./docs/SETUP_SPRING_LOG.md)
-
+* [Session 4: Spring Boot & DB](./docs/SETUP_DB_LOG.md)
