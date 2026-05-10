@@ -13,3 +13,5 @@ A Java 25 payment simulator for **$FEW**, focusing on advanced transactionality,
 * [Session 4: Spring Boot & DB](./docs/SETUP_DB_LOG.md)
 * [Session 5: Test Container](./docs/SETUP_TEST_CONTAINER_LOG.md)
 * [Session 6: Blockchain Strategy](./docs/SETUP_BLOCKCHAIN_LOG.md)
+* [Session 7: Bridge Spring Blockchain](./docs/SETUP_BRIDGE_SPRING_BLOCKCHAIN_LOG.md)
+
