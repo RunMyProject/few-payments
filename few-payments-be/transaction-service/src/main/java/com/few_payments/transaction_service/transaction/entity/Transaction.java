@@ -1,6 +1,7 @@
 package com.few_payments.transaction_service.transaction.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -13,6 +14,7 @@ import java.util.UUID;
  * Transaction
  * Author: Edoardo Sabatini
  * Date: 2026-05-09
+ * Latest Edit: 2026-05-10
  * Company: few-payments
  * Description: JPA entity mirroring the 'transactions' table in schema.sql.
  *              Uses BigDecimal for NUMERIC(38,18) — never use float for money.
@@ -20,6 +22,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "transactions")
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Transaction {
@@ -59,4 +62,17 @@ public class Transaction {
     /** Immutable audit timestamp — DEFAULT CURRENT_TIMESTAMP in schema.sql */
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    // Dentro Transaction.java
+    public Transaction(UUID id, String transactionHash, String senderWallet, 
+                   String receiverWallet, BigDecimal amount, String status, UUID sagaId) {
+        this.id = id;
+        this.transactionHash = transactionHash;
+        this.senderWallet = senderWallet;
+        this.receiverWallet = receiverWallet;
+        this.amount = amount;
+        this.status = status;
+        this.sagaId = sagaId;
+        this.createdAt = LocalDateTime.now(); // Initialize createdAt to current time for tests
+    }
 }
