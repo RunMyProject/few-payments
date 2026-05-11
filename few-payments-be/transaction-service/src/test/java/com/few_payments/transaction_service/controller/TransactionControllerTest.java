@@ -1,15 +1,18 @@
 package com.few_payments.transaction_service.controller;
 
 import com.few_payments.transaction_service.TestcontainersConfiguration;
+
+import lombok.RequiredArgsConstructor;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestConstructor;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.*;
@@ -20,6 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * TransactionControllerTest
  * Author: Edoardo Sabatini
  * Date: 2026-05-09
+ * Latest Edit: 2026-05-11
  * Company: few-payments
  * Description: Integration test for GET /api/v1/transactions.
  *              Uses the shared PostgreSQL container defined in TestcontainersConfiguration.
@@ -30,13 +34,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
 @Import(TestcontainersConfiguration.class)
+@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
+@RequiredArgsConstructor
 class TransactionControllerTest {
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    
+    // Note: @TestConstructor + autowireMode + @RequiredArgsConstructor + final fields allow us to use constructor injection without @Autowired.
+    private final MockMvc mockMvc;
+    private final JdbcTemplate jdbcTemplate;
 
     @BeforeEach
     void cleanUp() {
