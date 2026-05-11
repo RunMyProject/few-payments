@@ -6,6 +6,8 @@ A Java 25 payment simulator for **$FEW**, focusing on advanced transactionality,
 > **To HR Managers and IT Recruitment Teams:**
 > This documentation is subject to continuous development and real-time updates. As this is a live technical log of the project's evolution, please be patient with any potential delays or ongoing revisions! 🙏
 
+![Blockchain Contract Schema](./docs/images/blockchain-contract.jpeg)
+
 ## 📚 Project Documentation
 
 * [Session 1 & 2: Workstation & Runtime Setup](./docs/SETUP_LOG.md)
