@@ -13,6 +13,7 @@
 | **18:50** | **Debugging** | **IDE & Lombok Sync** | Fixed "red code" in VS Code (e.g., `setIdD` typo). Executed `mvn clean compile` and reset Java Language Server to fix annotation processing for `Transaction` entity. |
 | **19:15** | **Testing** | **ERC20 Flow Execution** | Programmed `AliceToBobFewTokenTest.java`. Successfully simulated: Deploy -> DB User Creation -> ERC20 Transfer -> Postgres Transaction Logging. |
 | **19:45** | **Finalization** | **Build Success** | Achieved `BUILD SUCCESS`. Verified that Bob's balance on Geth matches the record saved in the PostgreSQL `transactions` table. |
+| **20:10** | **Docs** | **Documentation Updated** | Updated README and internal logs with the current file structure and testing protocols. |
 
 ---
 
