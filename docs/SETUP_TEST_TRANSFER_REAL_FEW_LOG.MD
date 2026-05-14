@@ -56,8 +56,6 @@ This test represents the complete "Double Truth" orchestration for the FEW ecosy
 
 ## ✅ Core Concepts (Don't Forget!)
 
-Ecco il blocco aggiornato in inglese, integrando i termini tecnici e la spiegazione semplice del protocollo ERC20 che abbiamo implementato oggi:
-
 > [!IMPORTANT]
 > **💰 FEW Token Value & Atomic Units (1:1 Ratio)**
 > We have established a **1:1 ratio**, meaning **1 FEW = 1 ETH** of your private network.
