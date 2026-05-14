@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- pom.xml -->
+<!-- Author: Edoardo Sabatini -->
+<!-- Date: 2026-05-09 -->
+<!-- Latest Edit: 2026-05-14 -->
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -116,6 +120,32 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.web3j</groupId>
+				<artifactId>web3j-maven-plugin</artifactId>
+				<version>4.12.1</version>
+				<executions>
+					<execution>
+						<id>generate-sources-from-solidity</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate-sources</goal>
+						</goals>
+						<configuration>
+							<soliditySourceFiles>
+								<directory>${project.basedir}/src/main/resources/solidity</directory>
+								<includes>
+									<include>**/*.sol</include>
+								</includes>
+							</soliditySourceFiles>
+							<outputDirectory>
+								<java>${project.build.directory}/generated-sources/web3j</java>
+							</outputDirectory>
+							<packageName>com.few_payments.transaction_service.blockchain.contracts</packageName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

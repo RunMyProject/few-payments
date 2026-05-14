@@ -9,6 +9,7 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
  * TestcontainersConfiguration
  * Author: Edoardo Sabatini
  * Date: 2026-05-09
+ * Latest Edit: 2026-05-14
  * Company: few-payments
  * Description: Defines a shared PostgreSQL container for all integration tests.
  *              @ServiceConnection automatically wires the container's URL, username,
@@ -20,9 +21,7 @@ public class TestcontainersConfiguration {
     
     @Bean
     @ServiceConnection
-    // Rimosso il <?> qui
     PostgreSQLContainer postgresContainer() {
-        // Rimosso il <> qui
         return new PostgreSQLContainer("postgres:16-alpine");
     }
 }

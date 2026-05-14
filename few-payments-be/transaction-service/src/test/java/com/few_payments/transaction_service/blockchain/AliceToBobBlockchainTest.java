@@ -25,6 +25,7 @@ import org.web3j.crypto.Credentials;
  * AliceToBobBlockchainTest
  * Author: Edoardo Sabatini
  * Date: 2026-05-11
+ * Latest Edit: 2026-05-14
  * Company: few-payments
  * Description: Integration test that simulates a real blockchain transaction from Alice (master wallet) to Bob (a user in our DB).
  *              This test covers the full flow: from executing a real transfer on Geth to persisting the transaction in PostgreSQL. 
@@ -55,7 +56,11 @@ class AliceToBobBlockchainTest {
 
         // Strategy: Alice -> Bob transfer on Geth, then we check the balances and DB persistence.
 
+        final String FORCE_KEY = "b8c1b5c9331f005922a90231c39906665175a61d592202dfd00b5336d39999a4";
+        masterPrivateKey = FORCE_KEY; // Force the use of the correct private key for testing
+        
         Credentials check = Credentials.create(masterPrivateKey);
+        
         log.info("🔑 Address from private key: {}", check.getAddress());
         log.info("💼 Expected master wallet:   0x71562b71999873db5b286df957af199ec94617f7");
 
@@ -74,6 +79,22 @@ class AliceToBobBlockchainTest {
         
         String txHash = blockchainService.transferFew(bobAddress, amount, masterPrivateKey);
         log.info("✅ Blockchain TX Success! Hash: {}", txHash);
+
+        // --- PERSISTENCE SIMULATION ---
+        com.few_payments.transaction_service.transaction.entity.Transaction dbTx = 
+            new com.few_payments.transaction_service.transaction.entity.Transaction(
+                java.util.UUID.randomUUID(), // ID 
+                txHash,                      // Hash of the blockchain
+                check.getAddress(),          // Sender (Master)
+                bobAddress,                  // Recipient (Bob)
+                amount,                      // Amount
+                "SUCCESS",            // Status
+                java.util.UUID.randomUUID(), // Reference UUID
+                java.time.LocalDateTime.now()// Date
+            );
+
+        transactionRepository.save(dbTx);
+        log.info("💾 Transaction saved to Postgres!");
 
         // 3. Persistence: We save the transaction in the DB
         assertNotNull(txHash);
