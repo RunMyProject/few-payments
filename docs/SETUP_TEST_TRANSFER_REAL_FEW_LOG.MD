@@ -56,6 +56,19 @@ This test represents the complete "Double Truth" orchestration for the FEW ecosy
 
 ## ✅ Core Concepts (Don't Forget!)
 
+Ecco il blocco aggiornato in inglese, integrando i termini tecnici e la spiegazione semplice del protocollo ERC20 che abbiamo implementato oggi:
+
+> [!IMPORTANT]
+> **💰 FEW Token Value & Atomic Units (1:1 Ratio)**
+> We have established a **1:1 ratio**, meaning **1 FEW = 1 ETH** of your private network.
+> * **Strategic Simplification**: This parity was chosen to simplify backend calculations during this development phase.
+> * **Future Flexibility**: This is adjustable; by modifying the Solidity logic, we could change the valuation (e.g., setting **1 FEW = 0.5 ETH**).
+> * **Atomic Unit ($10^{18}$)**: In Solidity, decimals do not exist. We use the **Atomic Unit** (Wei), where 1 FEW is represented as a large integer followed by 18 zeros. This "Atomic" precision prevents rounding errors when handling micro-transactions.
+> * **Why the ERC20 Protocol?**: Think of ERC20 as a **Standardized Interface** (like a USB port). It provides a common set of rules (like `transfer` and `balanceOf`) that allows our Java backend to talk to the Smart Contract without knowing its internal complexity. It’s what transforms a simple script into a "Real Token" compatible with wallets and exchanges.
+> * **No Swap or Liquidity Pool (Yet)**: We haven't implemented automated exchange mechanisms like a **Swap** (direct trade) or **Liquidity Pool** (digital reserve for instant trading).
+> 
+>
+
 > [!IMPORTANT]
 > **EIP-155 & Replay Protection**
 > Geth nodes (version 1.10+) often default to rejecting transactions that don't include a `chainId`. This prevents a transaction from one network being "replayed" on another. Every `TransactionManager` in Java must be explicitly initialized with the `chainId` fetched from the node.
